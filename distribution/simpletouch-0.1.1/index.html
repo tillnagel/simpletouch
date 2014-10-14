@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>simpletouch</title>
+<meta name="description" content="a library for the programming environment processing" />
+<meta name="keywords" content="processing.org, library" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="ROBOTS" content="index,follow,archive" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="author" content="##author##" />
+<meta name="Rating" content="General" />
+<meta name="revisit-after" content="7 Days" />
+<meta name="doc-class" content="Living Document" />
+<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+<body>
+	<div id="container">
+	
+		<div id="header">
+			<h1>simpletouch</h1>
+		</div>
+		
+		<div id="menu" class="clear">
+			<ul>
+				<li><a href="#about">About</a> \ </li>
+				<li><a href="#download">Download</a> \ </li>
+				<li><a href="#download">Installation</a> \ </li>
+				<li><a href="#examples">Examples</a> \ </li>
+				<li><a href="./reference/index.html" target="_blank">Reference</a></li>
+				<!-- <li><a href="#demos">Demos</a> \ </li> -->				
+				<!-- <li><a href="#misc">Misc</a> \ </li> -->
+				<!-- <li><a href="#images">Images</a> \ </li> -->
+			</ul>
+		</div>
+		
+		<div id="content" class="clear">
+			
+			<div id="about">
+			<h2>simpletouch</h2>
+			<p>
+			A library by <a href="##yourLink##">Till Nagel</a> to create simple multitouch sketches in <a href="http://www.processing.org" target="_blank">Processing</a>. Last update, 05/03/2011.
+			</p>
+			<p>
+			Supports tapping, dragging, and pinching to select, move, rotate and scale visual items.
+			This library handles TUIO cursors to assist manipulating graphical objects using multitouch gestures.
+			It features direct transformations, i.e. each finger position stays at the  
+			</p>
+			<p>
+			Each visual item is drawn in its own canvas to enable independent inner and outer transformations. Methods are
+			provided for converting between the local coordinate system and the Processing canvas.
+			This library is intended to work as OpenGL sketches, and uses GLGraphics for offscreen buffer renderings. 
+			</p>
+			</div>
+			
+			
+			
+			<div id="download" class="clear">
+			<h2>Download</h2>
+			<p>
+			Download simpletouch version 0.1.1 in 
+			<a href="./download/simpletouch-0.1.1.zip">.zip format</a>.
+			</p>
+			<h2>Installation</h2>
+			<p>
+			Unzip and put the extracted simpletouch folder into the libraries folder of your processing sketches. Reference and examples are included in the simpletouch folder.
+			</p>
+			<p>
+			You need to install some 3rd party libraries, before you can use SimpleTouch and run the examples.
+			<a href="http://glgraphics.sourceforge.net/">GLGraphics</a> - Library extending the capabilities of the OpenGL renderer in Processing. Used for offscreen buffer rendering.  
+			<a href="http://www.tuio.org/?software">TUIO</a> - Library for tangible multitouch surfaces. Used for tapping events.
+			</p>
+			</div>	
+			
+			
+			<div id="resources">
+			<p><strong>Keywords</strong> multitouch, interaction, gestures, finger, transformation, dragging, tapping, rotating </p>
+			<p><strong>Reference</strong>. Have a look at the <a href="./reference/index.html" target="_blank">JavaDoc reference</a>. A copy of the reference is included in the .zip as well.</p>		
+			<p><strong>Source</strong>. The source code of simpletouch is available at <a href="http://code.google.com/p/simpletouch/">http://code.google.com/p/simpletouch/</a>, and its repository can be browsed <a href="http://code.google.com/p/simpletouch/source/browse/" target="_blank">here</a>.</p>			
+			</div>
+			
+			<div id="examples" class="clear">
+			<h2>Examples</h2>
+			<p>Find a list of examples in the current distribution of simpletouch, or have a look at them by following the links below.</p>
+			<ul>
+			<li><a href="examples/ImageTouch/ImageTouch.pde">ImageTouch</a></li> <li><a href="examples/MovingObject/MovingObject.pde">MovingObject</a></li> <li><a href="examples/MultipleObjects/MultipleObjects.pde">MultipleObjects</a></li> <li><a href="examples/SingleObject/SingleObject.pde">SingleObject</a></li> 
+			</ul>
+			</div>
+			
+			
+			<div id="info">
+			<h2>Tested</h2>
+			<p>
+			<!-- on which platform has the library been tested? -->
+			<strong>Platform</strong> osx,windows
+			
+			<!-- which processing version did you use for testing your library? -->
+			<br /><strong>Processing</strong> 1.5
+			
+			<!-- does your library depend on any other library or framework? -->
+			<br /><strong>Dependencies</strong> OpenGL, <a href="http://glgraphics.sourceforge.net/">GLGraphics</a>, <a href="http://www.tuio.org/?software">TUIO</a>
+			</p>
+			</div>
+		
+			
+			<!-- use the demos section for a list of applets run in a browser. -->
+			<!--
+			<div id="demos" class="clear">
+				<h2>demos</h2>
+				<p>
+				find a list of online applet demos below.
+				
+				<ul>
+					<li><a href="./applets/demo/index.html">demo</a></li>
+				</ul>
+				</p>
+			</div>
+			-->
+			
+			<!-- use the misc section for other relevant information. Activate the link to the misc section in the menu above. -->
+			<!--
+			<div id="misc" class="clear">
+				<p></p>
+			</div>
+			-->
+			
+			<!-- use the images/screenshots section. Activate the link to the misc section in the menu above. -->
+			<!--
+			<div id="images" class="clear">
+			</div>
+			-->
+			
+			
+			<br class="clear" />
+		</div>
+		
+		<div id="footer">
+			<p>by Till Nagel, Copyright 2011.</p>
+		</div>
+	</div>
+</body>
+</html>
