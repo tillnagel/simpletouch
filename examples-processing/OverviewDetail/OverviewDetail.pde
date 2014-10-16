@@ -1,3 +1,5 @@
+import processing.opengl.*;
+import codeanticode.glgraphics.*;
 import TUIO.*;
 import de.fhpotsdam.simpletouch.*;
 
@@ -9,7 +11,7 @@ int loupeSize = 200;
 float loupeFactor = 2.4;
 
 void setup() {
-  size(800, 450);
+  size(800, 450, GLConstants.GLGRAPHICS);
 
   simpleTouch = new SimpleTouch(this);
 

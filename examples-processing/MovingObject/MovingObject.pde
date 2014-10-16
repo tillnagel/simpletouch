@@ -1,10 +1,12 @@
+import processing.opengl.*;
+import codeanticode.glgraphics.*;
 import TUIO.*;
 import de.fhpotsdam.simpletouch.*;
 
 SimpleTouch simpleTouch;
 
 void setup() {
-  size(800, 800);
+  size(800, 800, GLConstants.GLGRAPHICS);
 
   simpleTouch = new SimpleTouch(this);
   
