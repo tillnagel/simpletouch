@@ -1,7 +1,6 @@
 package de.fhpotsdam.simpletouch.examples;
 
 import processing.core.PApplet;
-import codeanticode.glgraphics.GLConstants;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 
 /**
@@ -16,7 +15,7 @@ public class RadialAndTransparentObjectApp extends PApplet {
 	}
 
 	public void setup() {
-		size(800, 600, GLConstants.GLGRAPHICS);
+		size(800, 600);
 		smooth();
 
 		simpleTouch = new SimpleTouch(this);
@@ -24,8 +23,7 @@ public class RadialAndTransparentObjectApp extends PApplet {
 		// Randomly generates some transformable objects.
 		for (int i = 0; i < 10; i++) {
 			float s = random(60, 400);
-			RadialAndTransparentObject rObject = new RadialAndTransparentObject(this, random(width
-					- s), random(height - s), s, s);
+			RadialAndTransparentObject rObject = new RadialAndTransparentObject(this, random(width - s), random(height - s), s, s);
 			simpleTouch.addTouchObject(rObject);
 		}
 	}

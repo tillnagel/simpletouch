@@ -1,7 +1,6 @@
 package de.fhpotsdam.simpletouch.examples;
 
 import processing.core.PApplet;
-import codeanticode.glgraphics.GLConstants;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 
 /**
@@ -25,7 +24,7 @@ public class DrawOntoObjectApp extends PApplet {
 	}
 
 	public void setup() {
-		size(800, 600, GLConstants.GLGRAPHICS);
+		size(800, 600);
 		smooth();
 
 		simpleTouch = new SimpleTouch(this);

@@ -6,7 +6,6 @@ import TUIO.TuioCursor;
 import TUIO.TuioListener;
 import TUIO.TuioObject;
 import TUIO.TuioTime;
-import codeanticode.glgraphics.GLConstants;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 import de.fhpotsdam.simpletouch.examples.GridObject;
 
@@ -33,7 +32,7 @@ public class DoubleTapCreationApp extends PApplet implements TuioListener {
 	}
 
 	public void setup() {
-		size(800, 600, GLConstants.GLGRAPHICS);
+		size(800, 600);
 		smooth();
 		
 		// Creates TuioClient and connects this app

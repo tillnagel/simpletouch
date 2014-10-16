@@ -1,7 +1,6 @@
 package de.fhpotsdam.simpletouch.examples;
 
 import processing.core.PApplet;
-import codeanticode.glgraphics.GLConstants;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 
 public class SingleObjectFullscreenApp extends PApplet {
@@ -21,9 +20,9 @@ public class SingleObjectFullscreenApp extends PApplet {
 
 	public void setup() {
 		if (FULLSCREEN_MODE) {
-			size(screen.width, screen.height, GLConstants.GLGRAPHICS);
+			size(displayHeight, displayWidth);
 		} else {
-			size(800, 600, GLConstants.GLGRAPHICS);
+			size(800, 600);
 		}
 		smooth();
 		

@@ -3,7 +3,7 @@ package de.fhpotsdam.simpletouch;
 import processing.core.PApplet;
 import processing.core.PMatrix3D;
 import processing.core.PVector;
-import codeanticode.glgraphics.GLGraphicsOffScreen;
+import processing.core.PGraphics;
 
 /**
  * Simple transformable object.
@@ -17,6 +17,7 @@ import codeanticode.glgraphics.GLGraphicsOffScreen;
  * REVISIT For 3D conversion methods need to add one more layer (using screenX, and screenY to
  * convert from world to screen)
  */
+
 public abstract class TransformableObject {
 
 	/** The Processing applet. */
@@ -58,7 +59,7 @@ public abstract class TransformableObject {
 	private PMatrix3D innerMatrix = new PMatrix3D();
 
 	/** PGraphics to draw all graphics on. Is used as inner canvas. */
-	protected GLGraphicsOffScreen pg;
+	protected PGraphics pg;
 
 	public TransformableObject(PApplet p, float offsetX, float offsetY, float width, float height) {
 		this.p = p;
@@ -82,8 +83,10 @@ public abstract class TransformableObject {
 	
 	public void draw() {
 		if (pg == null) {
-			// Do this in draw, as otherwise jogl fails with "invalid memory access"
-			pg = new GLGraphicsOffScreen(p, (int) width, (int) height);
+			// Do this in draw, as otherwise jogl fails with "invalid memory access"			
+			pg = new PGraphics();
+			pg.setParent(p);
+			pg.setSize((int) width, (int) height);
 		}
 		
 		
@@ -111,7 +114,8 @@ public abstract class TransformableObject {
 		p.pushMatrix();
 		p.translate(offset.x, offset.y);
 		p.applyMatrix(matrix);
-		p.image(pg.getTexture(), 0, 0);
+		p.image(pg.textureImage, 0, 0);
+
 		p.popMatrix();
 	}
 

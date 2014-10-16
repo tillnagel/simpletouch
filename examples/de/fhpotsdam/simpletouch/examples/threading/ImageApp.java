@@ -2,8 +2,7 @@ package de.fhpotsdam.simpletouch.examples.threading;
 
 import processing.core.PApplet;
 import processing.core.PImage;
-import processing.xml.XMLElement;
-import codeanticode.glgraphics.GLConstants;
+import processing.data.XML;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 
 /**
@@ -33,9 +32,9 @@ public class ImageApp extends PApplet implements ImageLoadThreadListener {
 
 	public void setup() {
 		if (FULLSCREEN_MODE) {
-			size(screen.width, screen.height, GLConstants.GLGRAPHICS);
+			size(displayWidth, displayHeight);
 		} else {
-			size(1024, 768, GLConstants.GLGRAPHICS);
+			size(1024, 768);
 		}
 		smooth();
 		
@@ -58,11 +57,11 @@ public class ImageApp extends PApplet implements ImageLoadThreadListener {
 	}
 
 	public void loadFeed() {
-		XMLElement rss = new XMLElement(this, feedUrl);
+		XML rss = loadXML(feedUrl);
 		// Get thumbnail of each element
-		XMLElement[] imageURLElements = rss.getChildren("channel/item/media:content");
+		XML[] imageURLElements = rss.getChildren("channel/item/media:content");
 		for (int i = 0; i < imageURLElements.length && i < MAX_IMAGES; i++) {
-			String imageURL = imageURLElements[i].getStringAttribute("url");
+			String imageURL = imageURLElements[i].getString("url");
 			Thread thread = new ImageLoadThread(this, imageURL, i);
 			thread.start();
 		}

@@ -24,9 +24,9 @@ public class Multiple3DObjectApp extends PApplet {
 
 	public void setup() {
 		if (FULLSCREEN_MODE) {
-			size(screen.width, screen.height, OPENGL);
+			size(displayWidth, displayHeight);
 		} else {
-			size(800, 600, OPENGL);
+			size(800, 600);
 		}
 		smooth();
 		textFont(loadFont("Miso-Light-12.vlw"), 12);
@@ -41,7 +41,7 @@ public class Multiple3DObjectApp extends PApplet {
 	public void draw() {
 		background(240);
 
-		hint(ENABLE_DEPTH_TEST);
+		//hint(ENABLE_DEPTH_TEST);
 
 		simpleTouch.draw();
 		simpleTouch.drawCursors();
@@ -51,7 +51,7 @@ public class Multiple3DObjectApp extends PApplet {
 		float x = screenX(v[0], v[1], v[2]);
 		float y = screenY(v[0], v[1], v[2]);
 		
-		hint(DISABLE_DEPTH_TEST);
+		//hint(DISABLE_DEPTH_TEST);
 		ellipse(x, y, 10, 10);
 	}
 

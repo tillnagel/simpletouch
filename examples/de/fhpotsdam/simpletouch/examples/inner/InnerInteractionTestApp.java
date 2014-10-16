@@ -1,7 +1,6 @@
 package de.fhpotsdam.simpletouch.examples.inner;
 
 import processing.core.PApplet;
-import codeanticode.glgraphics.GLConstants;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 import de.fhpotsdam.simpletouch.TouchObject;
 
@@ -16,7 +15,7 @@ public class InnerInteractionTestApp extends PApplet {
 	}
 
 	public void setup() {
-		size(800, 600, GLConstants.GLGRAPHICS);
+		size(800, 600);
 		smooth();
 		textFont(createFont("sans-serif", 12));
 
