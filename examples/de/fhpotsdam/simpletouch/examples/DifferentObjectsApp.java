@@ -14,7 +14,7 @@ public class DifferentObjectsApp extends PApplet {
 	}
 
 	public void setup() {
-		size(700, 300);
+		size(700, 300, OPENGL);
 		smooth();
 		
 		simpleTouch = new SimpleTouch(this);

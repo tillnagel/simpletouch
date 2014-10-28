@@ -32,9 +32,9 @@ public class ImageApp extends PApplet implements ImageLoadThreadListener {
 
 	public void setup() {
 		if (FULLSCREEN_MODE) {
-			size(displayWidth, displayHeight);
+			size(displayWidth, displayHeight, OPENGL);
 		} else {
-			size(1024, 768);
+			size(1024, 768, OPENGL);
 		}
 		smooth();
 		

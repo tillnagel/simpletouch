@@ -84,9 +84,9 @@ public abstract class TransformableObject {
 	public void draw() {
 		if (pg == null) {
 			// Do this in draw, as otherwise jogl fails with "invalid memory access"			
-			pg = new PGraphics();
+			pg = p.createGraphics((int) width, (int) height);
 			pg.setParent(p);
-			pg.setSize((int) width, (int) height);
+			//pg.setSize((int) width, (int) height);
 		}
 		
 		
@@ -114,7 +114,7 @@ public abstract class TransformableObject {
 		p.pushMatrix();
 		p.translate(offset.x, offset.y);
 		p.applyMatrix(matrix);
-		p.image(pg.textureImage, 0, 0);
+		p.image(pg, 0, 0);
 
 		p.popMatrix();
 	}

@@ -32,7 +32,7 @@ public class DoubleTapCreationApp extends PApplet implements TuioListener {
 	}
 
 	public void setup() {
-		size(800, 600);
+		size(800, 600, OPENGL);
 		smooth();
 		
 		// Creates TuioClient and connects this app

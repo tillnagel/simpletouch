@@ -24,12 +24,12 @@ public class Multiple3DObjectApp extends PApplet {
 
 	public void setup() {
 		if (FULLSCREEN_MODE) {
-			size(displayWidth, displayHeight);
+			size(displayWidth, displayHeight, OPENGL);
 		} else {
-			size(800, 600);
+			size(800, 600, OPENGL);
 		}
 		smooth();
-		textFont(loadFont("Miso-Light-12.vlw"), 12);
+		textFont(createFont("sans-serif", 12));
 
 		simpleTouch = new SimpleTouch(this);
 		simpleTouch.addTouchObject(new GridObject(this, width / 2 - 150,

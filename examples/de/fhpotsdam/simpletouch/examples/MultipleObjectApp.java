@@ -13,7 +13,7 @@ public class MultipleObjectApp extends PApplet {
 	}
 
 	public void setup() {
-		size(625, 300);
+		size(625, 300, OPENGL);
 		smooth();
 
 		simpleTouch = new SimpleTouch(this);

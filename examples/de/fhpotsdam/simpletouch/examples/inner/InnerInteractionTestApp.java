@@ -15,7 +15,7 @@ public class InnerInteractionTestApp extends PApplet {
 	}
 
 	public void setup() {
-		size(800, 600);
+		size(800, 600, OPENGL);
 		smooth();
 		textFont(createFont("sans-serif", 12));
 
