@@ -277,7 +277,12 @@ ${line}
   							match="##source.repository##"
   	  						replace="${source.repository}"
   	  						flags="g" />
-  	  						
+
+	  	 <replaceregexp file="${project.dist.version}/web/index.html"
+ 							match="##source.examples.repository##"
+ 	  						replace="${source.examples.repository}"
+ 	  						flags="g" />
+
   	  	<replaceregexp file="${project.dist.version}/web/index.html"
   							match="##project.copyright##"
   	  						replace="${project.copyright}"
