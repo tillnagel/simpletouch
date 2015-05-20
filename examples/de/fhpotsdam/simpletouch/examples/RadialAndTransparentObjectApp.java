@@ -15,7 +15,7 @@ public class RadialAndTransparentObjectApp extends PApplet {
 	}
 
 	public void setup() {
-		size(800, 600);
+		size(800, 600, OPENGL);
 		smooth();
 
 		simpleTouch = new SimpleTouch(this);

@@ -8,7 +8,7 @@ class MovingTouchObject extends TouchObject {
   }
   
   public void internalDraw() {
-    if (!isTapped) {
+    if (!isTapped()) {
       animate();
     }
     

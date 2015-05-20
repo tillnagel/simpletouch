@@ -9,7 +9,7 @@ int loupeSize = 200;
 float loupeFactor = 2.4;
 
 void setup() {
-  size(800, 450);
+  size(800, 450, OPENGL);
 
   simpleTouch = new SimpleTouch(this);
 
@@ -39,4 +39,3 @@ void draw() {
   simpleTouch.draw();
   simpleTouch.drawCursors();
 }
-
