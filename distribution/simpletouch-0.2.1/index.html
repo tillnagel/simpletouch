@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>simpletouch</title>
+<meta name="description" content="a library for the programming environment processing" />
+<meta name="keywords" content="processing.org, library" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="ROBOTS" content="index,follow,archive" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="author" content="##author##" />
+<meta name="Rating" content="General" />
+<meta name="revisit-after" content="7 Days" />
+<meta name="doc-class" content="Living Document" />
+<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+<body>
+	<div id="container">
+	
+		<div id="header">
+			<h1>simpletouch</h1>
+		</div>
+		
+		<div id="menu" class="clear">
+			<ul>
+				<li><a href="#about">About</a> \ </li>
+				<li><a href="#download">Download</a> \ </li>
+				<li><a href="#download">Installation</a> \ </li>
+				<li><a href="#examples">Examples</a> \ </li>
+				<li><a href="./reference/index.html" target="_blank">Reference</a></li>
+				<!-- <li><a href="#demos">Demos</a> \ </li> -->				
+				<!-- <li><a href="#misc">Misc</a> \ </li> -->
+				<!-- <li><a href="#images">Images</a> \ </li> -->
+			</ul>
+		</div>
+		
+		<div id="content" class="clear">
+			
+			<div id="about">
+			<h2>simpletouch</h2>
+			<p>
+			A library by <a href="http://tillnagel.com">Till Nagel</a> to create simple multitouch sketches in <a href="http://www.processing.org" target="_blank">Processing</a>. Last update, 07/09/2015.
+			</p>
+			<p>
+			Supports tapping, dragging, and pinching to select, move, rotate and scale visual items.
+			This library handles TUIO cursors to assist manipulating graphical objects using simple multitouch gestures.
+			It features direct transformations, i.e. each finger position stays at its respective object position while transforming.
+			</p>
+			<p>
+			A visual item is drawn in its own canvas to enable independent inner and outer transformations. Methods are
+			provided for converting between the local coordinate system and the Processing canvas.
+			This library is intended to work as OpenGL sketches, and uses GLGraphics for offscreen buffer renderings. 
+			</p>
+			</div>
+			
+			
+			
+			<div id="download" class="clear">
+			<h2>Download</h2>
+			<p>
+			Download simpletouch version 0.2.1 in 
+			<a href="./download/simpletouch-0.2.1.zip">.zip format</a>.
+			</p>
+			<h2>Installation</h2>
+			<p>
+			Unzip and put the extracted simpletouch folder into the libraries folder of your processing sketches. Reference and examples are included in the simpletouch folder.
+			</p>
+			<p>
+			You need to install a 3rd party libraries, before you can use SimpleTouch and run the examples.   
+			<a href="http://www.tuio.org/?software">TUIO</a>, a library for tangible multitouch surfaces.
+			</p>
+			</div>	
+			
+			
+			<div id="resources">
+			<p><strong>Keywords</strong> multitouch, interaction, gestures, finger, transformation, dragging, tapping, rotating </p>
+			<p><strong>Reference</strong>. Have a look at the <a href="./reference/index.html" target="_blank">JavaDoc reference</a>. A copy of the reference is included in the .zip as well.</p>		
+			<p><strong>Source</strong>. The source code of simpletouch is available at <a href="https://github.com/tillnagel/simpletouch/">https://github.com/tillnagel/simpletouch/</a>, and its repository can be browsed <a href="https://github.com/tillnagel/simpletouch" target="_blank">here</a>.</p>			
+			</div>
+			
+			<div id="examples" class="clear">
+			<h2>Examples</h2>
+			<p>Find a list of examples in the current distribution of simpletouch, or have a look at them by following the links below.
+			You can find more examples at <a href="https://github.com/tillnagel/simpletouch/">https://github.com/tillnagel/simpletouch/</a>.</p>
+			<ul>
+			<li><a href="examples/ImageTouch/ImageTouch.pde">ImageTouch</a></li> <li><a href="examples/MovingObject/MovingObject.pde">MovingObject</a></li> <li><a href="examples/MultipleObjects/MultipleObjects.pde">MultipleObjects</a></li> <li><a href="examples/OverviewDetail/OverviewDetail.pde">OverviewDetail</a></li> <li><a href="examples/SingleObject/SingleObject.pde">SingleObject</a></li> <li><a href="examples/Switch/Switch.pde">Switch</a></li> 
+			</ul>
+			</div>
+			
+			
+			<div id="info">
+			<h2>Tested</h2>
+			<p>
+			<!-- on which platform has the library been tested? -->
+			<strong>Platform</strong> osx,windows
+			
+			<!-- which processing version did you use for testing your library? -->
+			<br /><strong>Processing</strong> 3.0
+			
+			<!-- does your library depend on any other library or framework? -->
+			<br /><strong>Dependencies</strong> <a href="http://www.tuio.org/?software">TUIO</a>
+			</p>
+			</div>
+		
+			
+			<!-- use the demos section for a list of applets run in a browser. -->
+			<!--
+			<div id="demos" class="clear">
+				<h2>demos</h2>
+				<p>
+				find a list of online applet demos below.
+				
+				<ul>
+					<li><a href="./applets/demo/index.html">demo</a></li>
+				</ul>
+				</p>
+			</div>
+			-->
+			
+			<!-- use the misc section for other relevant information. Activate the link to the misc section in the menu above. -->
+			<!--
+			<div id="misc" class="clear">
+				<p></p>
+			</div>
+			-->
+			
+			<!-- use the images/screenshots section. Activate the link to the misc section in the menu above. -->
+			<!--
+			<div id="images" class="clear">
+			</div>
+			-->
+			
+			
+			<br class="clear" />
+		</div>
+		
+		<div id="footer">
+			<p>by Till Nagel, <a href="http://idl.fh-potsdam.de/">Interaction Design Lab</a>, FH Potsdam, Copyright 2015.</p>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20548372-2']);
+  _gaq.push(['_setDomainName', '.tillnagel.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+	
+</body>
+</html>
