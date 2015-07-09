@@ -1,9 +1,10 @@
 package de.fhpotsdam.simpletouch;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.core.PGraphics;
 import processing.core.PMatrix3D;
 import processing.core.PVector;
-import processing.core.PGraphics;
 
 /**
  * Simple transformable object.
@@ -14,8 +15,8 @@ import processing.core.PGraphics;
  * innerRotate(), setInnerOffset(), etc are inner (off-screen buffer) object methods
  * 
  * 
- * REVISIT For 3D conversion methods need to add one more layer (using screenX, and screenY to
- * convert from world to screen)
+ * REVISIT For 3D conversion methods need to add one more layer (using screenX, and screenY to convert from world to
+ * screen)
  */
 
 public abstract class TransformableObject {
@@ -78,18 +79,44 @@ public abstract class TransformableObject {
 
 		calculateMatrix();
 	}
-	
+
+	public String getRenderer() {
+		/** Renderer of the offscreen PGraphics. */
+		String renderer = null;
+
+		try {
+			Class P2DClass = Class.forName(PConstants.P2D);
+			Class P3DClass = Class.forName(PConstants.P3D);
+
+			if (P2DClass.isInstance(p.g)) {
+				renderer = PConstants.P2D;
+			} else if (P3DClass.isInstance(p.g)) {
+				renderer = PConstants.P3D;
+			} else {
+				if (p.g.is2D()) {
+					renderer = PConstants.P2D;
+				} else {
+					renderer = PConstants.OPENGL;
+				}
+			}
+
+		} catch (ClassNotFoundException e) {
+			renderer = PConstants.OPENGL;
+		}
+		return renderer;
+	}
+
 	boolean noGraphicScale = false;
-	
+
 	public void draw() {
 		if (pg == null) {
-			// Do this in draw, as otherwise jogl fails with "invalid memory access"			
-			pg = p.createGraphics((int) width, (int) height);
+			String renderer = getRenderer();
+			// Do this in draw, as otherwise jogl fails with "invalid memory access"
+			pg = p.createGraphics((int) width, (int) height, renderer);
 			pg.setParent(p);
-			//pg.setSize((int) width, (int) height);
+			// pg.setSize((int) width, (int) height);
 		}
-		
-		
+
 		// Transforms inner PGraphics, and draws internal object onto off-screen buffer.
 		pg.beginDraw();
 		pg.pushMatrix();
@@ -123,7 +150,7 @@ public abstract class TransformableObject {
 	 * The internal draw method. Needs to be implemented in sub classes.
 	 */
 	public abstract void internalDraw();
-	
+
 	/**
 	 * Checks whether given screen coordinates are hitting this object.
 	 * 
@@ -326,11 +353,11 @@ public abstract class TransformableObject {
 		this.offset.y = y;
 		calculateMatrix();
 	}
-	
+
 	public void setPosition(float x, float y) {
 		setOffset(x, y);
 	}
-	
+
 	public float getX() {
 		return offset.x;
 	}
