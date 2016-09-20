@@ -4,7 +4,7 @@ import de.fhpotsdam.simpletouch.*;
 SimpleTouch simpleTouch;
 
 void setup() {
-  size(800, 800, OPENGL);
+  size(800, 800, P3D);
 
   simpleTouch = new SimpleTouch(this);
   

@@ -5,7 +5,7 @@ import de.fhpotsdam.simpletouch.examples.GridObject;
 SimpleTouch simpleTouch;
 
 void setup() {
-  size(800, 800);
+  size(800, 800, P3D);
 
   simpleTouch = new SimpleTouch(this);
   

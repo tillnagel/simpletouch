@@ -1,3 +1,9 @@
+/**
+ * Shows draggable overview+detail. Slide the red rectangle to move the detail view pane.
+ *
+ * Note, that rotating the red rectangle works but is not reflected in the detail view.
+ */
+
 import TUIO.*;
 import de.fhpotsdam.simpletouch.*;
 
@@ -9,7 +15,7 @@ int loupeSize = 200;
 float loupeFactor = 2.4;
 
 void setup() {
-  size(800, 450, OPENGL);
+  size(800, 450, P3D);
 
   simpleTouch = new SimpleTouch(this);
 
