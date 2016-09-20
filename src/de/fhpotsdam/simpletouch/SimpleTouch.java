@@ -88,7 +88,7 @@ public class SimpleTouch implements TuioListener {
 		this.tuioClient.addTuioListener(this);
 
 		// To disconnect tuioClient after applet stops
-		p.registerDispose(this);
+		p.registerMethod("dispose", this);
 	}
 
 	/**
