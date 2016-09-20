@@ -9,25 +9,22 @@ public class SingleObjectFullscreenApp extends PApplet {
 
 	SimpleTouch simpleTouch;
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
+		PApplet.main(new String[] { SingleObjectFullscreenApp.class.getName() });
+	}
+
+	public void settings() {
 		if (FULLSCREEN_MODE) {
-			PApplet.main(new String[] { "--present", "--exclusive", "--bgcolor=#000000",
-					"--hide-stop", "de.fhpotsdam.simpletouch.examples.SingleObjectFullscreenApp" });
+			fullScreen(P3D);
 		} else {
-			PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.SingleObjectFullscreenApp" });
+			size(800, 600, P3D);
 		}
+		smooth();
 	}
 
 	public void setup() {
-		if (FULLSCREEN_MODE) {
-			size(displayHeight, displayWidth);
-		} else {
-			size(800, 600);
-		}
-		smooth();
-		
 		simpleTouch = new SimpleTouch(this);
-		GridObject gridObject = new GridObject(this, width/2-200, height/2-200, 400, 400);
+		GridObject gridObject = new GridObject(this, width / 2 - 200, height / 2 - 200, 400, 400);
 		simpleTouch.addTouchObject(gridObject);
 	}
 

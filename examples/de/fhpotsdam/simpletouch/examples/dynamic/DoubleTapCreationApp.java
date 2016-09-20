@@ -26,15 +26,18 @@ public class DoubleTapCreationApp extends PApplet implements TuioListener {
 	float doubleTapMaxTime = 20; // in frames
 	float doubleTapTime = 0;
 	float doubleTapDistance = 50; // in pixels
-	
-	public static void main(String[] args) {
-		PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.dynamic.DoubleTapCreationApp" });
+
+	public static void main(String args[]) {
+		PApplet.main(new String[] { DoubleTapCreationApp.class.getName() });
+	}
+
+	public void settings() {
+		size(800, 600, P3D);
+		smooth();
 	}
 
 	public void setup() {
-		size(800, 600, OPENGL);
-		smooth();
-		
+
 		// Creates TuioClient and connects this app
 		tuioClient = new TuioClient();
 		tuioClient.connect();

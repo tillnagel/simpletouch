@@ -11,29 +11,28 @@ public class Multiple3DObjectApp extends PApplet {
 
 	SimpleTouch simpleTouch;
 
-	GridObject goB = new GridObject(this, 0, 0, 300, 300, "B");
+	GridObject goB = null;
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
+		PApplet.main(new String[] { Multiple3DObjectApp.class.getName() });
+	}
+
+	public void settings() {
 		if (FULLSCREEN_MODE) {
-			PApplet.main(new String[] { "--present", "--exclusive", "--bgcolor=#000000",
-					"--hide-stop", "de.fhpotsdam.simpletouch.examples.MultipleObjectApp" });
+			fullScreen(P3D);
 		} else {
-			PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.MultipleObjectApp" });
+			size(800, 600, P3D);
 		}
+		smooth();
 	}
 
 	public void setup() {
-		if (FULLSCREEN_MODE) {
-			size(displayWidth, displayHeight, OPENGL);
-		} else {
-			size(800, 600, OPENGL);
-		}
-		smooth();
 		textFont(createFont("sans-serif", 12));
 
 		simpleTouch = new SimpleTouch(this);
-		simpleTouch.addTouchObject(new GridObject(this, width / 2 - 150,
-				height / 2 - 150, 300, 300, "A"));
+		simpleTouch.addTouchObject(new GridObject(this, width / 2 - 150, height / 2 - 150, 300, 300, "A"));
+		goB = new GridObject(this, 0, 0, 300, 300, "B");
+		;
 		simpleTouch.addTouchObject(goB);
 		simpleTouch.addTouchObject(new GridObject(this, 600, 50, 200, 200, "C"));
 	}
@@ -41,7 +40,7 @@ public class Multiple3DObjectApp extends PApplet {
 	public void draw() {
 		background(240);
 
-		//hint(ENABLE_DEPTH_TEST);
+		// hint(ENABLE_DEPTH_TEST);
 
 		simpleTouch.draw();
 		simpleTouch.drawCursors();
@@ -50,8 +49,8 @@ public class Multiple3DObjectApp extends PApplet {
 		float[] v = goB.getScreenFromObjectPosition(10, 10);
 		float x = screenX(v[0], v[1], v[2]);
 		float y = screenY(v[0], v[1], v[2]);
-		
-		//hint(DISABLE_DEPTH_TEST);
+
+		// hint(DISABLE_DEPTH_TEST);
 		ellipse(x, y, 10, 10);
 	}
 
@@ -62,7 +61,7 @@ public class Multiple3DObjectApp extends PApplet {
 		if (key == 'X') {
 			goB.rotate(-0.1f, 0, 0);
 		}
-		
+
 		if (key == 'z') {
 			goB.rotate(0, 0, 0.1f);
 		}
@@ -71,12 +70,12 @@ public class Multiple3DObjectApp extends PApplet {
 		}
 
 		float[] v = goB.getScreenFromObjectPosition(10, 10);
-		println("xyz="  + Arrays.toString(v));
+		println("xyz=" + Arrays.toString(v));
 	}
 
 	public void mouseMoved() {
 		println("mouse=" + mouseX + "," + mouseY);
-		
+
 		if (goB.isHit(mouseX, mouseY)) {
 			goB.color = color(255, 0, 0, 200);
 		} else {

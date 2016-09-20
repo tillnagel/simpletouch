@@ -10,20 +10,23 @@ public class RadialAndTransparentObjectApp extends PApplet {
 
 	SimpleTouch simpleTouch;
 
-	public static void main(String[] args) {
-		PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.RadialAndTransparentObjectApp" });
+	public static void main(String args[]) {
+		PApplet.main(new String[] { RadialAndTransparentObjectApp.class.getName() });
+	}
+
+	public void settings() {
+		size(800, 600, P3D);
+		smooth();
 	}
 
 	public void setup() {
-		size(800, 600, OPENGL);
-		smooth();
-
 		simpleTouch = new SimpleTouch(this);
 
 		// Randomly generates some transformable objects.
 		for (int i = 0; i < 10; i++) {
 			float s = random(60, 400);
-			RadialAndTransparentObject rObject = new RadialAndTransparentObject(this, random(width - s), random(height - s), s, s);
+			RadialAndTransparentObject rObject = new RadialAndTransparentObject(this, random(width - s), random(height
+					- s), s, s);
 			simpleTouch.addTouchObject(rObject);
 		}
 	}

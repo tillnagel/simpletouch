@@ -18,8 +18,8 @@ public class RadialAndTransparentObject extends TouchObject {
 	public void internalDraw() {
 		pg.stroke(0, 30);
 		pg.strokeWeight(strokeWeight);
-		
-		pg.fill(57,230,57, 100);
+
+		pg.fill(57, 230, 57, 20);
 		pg.ellipse(width / 2, height / 2, width - strokeWeight, height - strokeWeight);
 	}
 

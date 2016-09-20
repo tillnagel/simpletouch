@@ -13,10 +13,12 @@ public class DifferentObjectsApp extends PApplet {
 		PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.DifferentObjectsApp" });
 	}
 
-	public void setup() {
-		size(700, 300, OPENGL);
+	public void settings() {
+		size(700, 300, P3D);
 		smooth();
-		
+	}
+
+	public void setup() {
 		simpleTouch = new SimpleTouch(this);
 
 		GridObject go = new GridObject(this, 500, 50, 300, 300, "Grid");

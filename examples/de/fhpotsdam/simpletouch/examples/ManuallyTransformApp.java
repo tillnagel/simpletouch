@@ -1,23 +1,25 @@
 package de.fhpotsdam.simpletouch.examples;
 
-import de.fhpotsdam.simpletouch.SimpleTouch;
 import processing.core.PApplet;
+import de.fhpotsdam.simpletouch.SimpleTouch;
 
 public class ManuallyTransformApp extends PApplet {
-	
+
 	SimpleTouch simpleTouch;
 
-	public static void main(String[] args) {
-		PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.ManuallyTransformApp" });
+	public static void main(String args[]) {
+		PApplet.main(new String[] { ManuallyTransformApp.class.getName() });
+	}
+
+	public void settings() {
+		size(800, 600, P3D);
+		smooth();
 	}
 
 	public void setup() {
-		size(800, 600, OPENGL);
-		smooth();
-
 		simpleTouch = new SimpleTouch(this);
-		
-		GridObject gridObject = new GridObject(this, width/2-400, height/2-400, 800, 800);
+
+		GridObject gridObject = new GridObject(this, width / 2 - 400, height / 2 - 400, 800, 800);
 		gridObject.color = color(140);
 		// Scale to half its size
 		gridObject.scale(0.5f);

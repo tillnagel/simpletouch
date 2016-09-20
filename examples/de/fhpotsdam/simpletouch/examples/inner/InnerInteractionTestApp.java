@@ -1,6 +1,7 @@
 package de.fhpotsdam.simpletouch.examples.inner;
 
 import processing.core.PApplet;
+import processing.event.MouseEvent;
 import de.fhpotsdam.simpletouch.SimpleTouch;
 import de.fhpotsdam.simpletouch.TouchObject;
 
@@ -10,13 +11,16 @@ public class InnerInteractionTestApp extends PApplet {
 	InnerImageObject imgObj1;
 	InnerImageObject imgObj2;
 
-	public static void main(String[] args) {
-		PApplet.main(new String[] { "de.fhpotsdam.simpletouch.examples.inner.InnerInteractionTestApp" });
+	public static void main(String args[]) {
+		PApplet.main(new String[] { InnerInteractionTestApp.class.getName() });
+	}
+
+	public void settings() {
+		size(800, 600, P3D);
+		smooth();
 	}
 
 	public void setup() {
-		size(800, 600, OPENGL);
-		smooth();
 		textFont(createFont("sans-serif", 12));
 
 		simpleTouch = new SimpleTouch(this);
@@ -24,12 +28,6 @@ public class InnerInteractionTestApp extends PApplet {
 		simpleTouch.addTouchObject(imgObj1);
 		imgObj2 = new InnerImageObject(this, "fhp-logo.gif", 500, 220, 200, 350);
 		simpleTouch.addTouchObject(imgObj2);
-
-		addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-			public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-				mouseWheel(evt.getWheelRotation());
-			}
-		});
 	}
 
 	public void draw() {
@@ -64,10 +62,10 @@ public class InnerInteractionTestApp extends PApplet {
 		}
 	}
 
-	public void mousePressed() {
+	public void mousePressed(MouseEvent mouseEvent) {
 		for (TouchObject imgObj : simpleTouch.getTouchObjects()) {
 			if (imgObj.isHit(mouseX, mouseY)) {
-				if (mouseEvent.getClickCount() == 2) {
+				if (mouseEvent.getCount() == 2) {
 					float[] xy = imgObj.getObjectFromScreenPosition(mouseX, mouseY);
 					imgObj.panToObjectCenter(xy[0], xy[1]);
 				}
@@ -75,13 +73,13 @@ public class InnerInteractionTestApp extends PApplet {
 		}
 	}
 
-	public void mouseWheel(float delta) {
+	public void mouseWheel(MouseEvent mouseEvent) {
 		for (TouchObject imgObj : simpleTouch.getTouchObjects()) {
 			if (imgObj.isHit(mouseX, mouseY)) {
 				imgObj.setInnerTransCenter(mouseX, mouseY);
-				if (delta < 0) {
+				if (mouseEvent.getCount() < 0) {
 					imgObj.innerScale(0.9f);
-				} else if (delta > 0) {
+				} else if (mouseEvent.getCount() > 0) {
 					imgObj.innerScale(1.1f);
 				}
 			}
