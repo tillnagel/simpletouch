@@ -96,12 +96,12 @@ public abstract class TransformableObject {
 				if (p.g.is2D()) {
 					renderer = PConstants.P2D;
 				} else {
-					renderer = PConstants.OPENGL;
+					renderer = PConstants.P3D;
 				}
 			}
 
 		} catch (ClassNotFoundException e) {
-			renderer = PConstants.OPENGL;
+			renderer = PConstants.P3D;
 		}
 		return renderer;
 	}
@@ -119,6 +119,7 @@ public abstract class TransformableObject {
 
 		// Transforms inner PGraphics, and draws internal object onto off-screen buffer.
 		pg.beginDraw();
+		pg.clear();
 		pg.pushMatrix();
 		pg.translate(innerOffset.x, innerOffset.y);
 		pg.applyMatrix(innerMatrix);
